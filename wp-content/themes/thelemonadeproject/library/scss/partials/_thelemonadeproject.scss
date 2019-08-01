@@ -1,0 +1,142 @@
+//Gooogle font used in logo
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,700|Montserrat:400,400i,700&display=swap');
+
+//Custom Colors
+$green: 	rgba(84, 195, 52, 1);
+$yellow:	rgba(245, 226, 12, 1);
+
+$primary: $green;
+$secondary: $yellow;
+$tertiary: white;
+
+//Custon Vars
+$stylized-font	: 'Josefin Slab', serif;
+$body-font		: 'Montserrat', sans-serif;
+$nav-size		: 1.15rem;
+
+//Bootstrap Overrides
+a:focus, buttona:focus{ box-shadow: none!important; }
+
+//Buttons
+.btn-primary, .bg-primary{ background: $primary; border: 2px solid $primary; &:hover, &.btn-primary:not(:disabled):not(.disabled):active{ background: rgba($primary, .25); border-color: $primary; } }
+.btn-secondary{ background: $secondary; border: 2px solid $secondary; &:hover, &.btn-secondary:not(:disabled):not(.disabled):active{ background: rgba($secondary, .25); border-color: $secondary; } }
+.btn-tertiary{ background: $tertiary; border: 2px solid $tertiary; color: gray; &:hover, &.btn-tertiary:not(:disabled):not(.disabled):active{ background: rgba($tertiary, .25); border-color: $tertiary; } }
+.btn-outline-primary{ border: 2px solid $primary; color: $primary; background: rgba(0,0,0,.25); &:hover, &.btn-outline-primary:not(:disabled):not(.disabled):active{ background: $primary; border-color: $primary; } }
+.btn-outline-secondary{ border: 2px solid $secondary; color: $secondary; background: rgba(0,0,0,.15); &:hover, &.btn-outline-secondary:not(:disabled):not(.disabled):active{ background: $secondary; border-color: $secondary; } }
+.btn-outline-tertiary{ border: 2px solid $tertiary; color: $tertiary; background: rgba(0,0,0,.15); &:hover, &.btn-outline-tertiary:not(:disabled):not(.disabled):active{ background: $tertiary; border-color: $tertiary; color: gray; } }
+
+//Cards
+.card{ border: none!important; }
+
+//Globals
+body{ font-family: $body-font; color: gray; }
+h1,h2,h3,h4,h5,h6{ font-family: $stylized-font; color: $green; padding: 0; margin: 0; }
+a, .btn-link{ color: $green; &:hover{ color: $green; } }
+
+//colors:
+.primary{ background: $primary; border: 2px solid $primary; }
+.secondary{ background: $secondary; border: 2px solid $secondary; }
+.tertiary{ background: $tertiary; border: 2px solid $tertiary; }
+.text-primary{ color: $primary!important; }
+.text-secondary{ color: $secondary!important; }
+.text-tertiary{ color: $tertiary!important; }
+
+//Overlay
+.bg-overlay-25{ background: rgba(0,0,0,.25); }
+.bg-overlay-35{ background: rgba(0,0,0,.35); }
+.bg-overlay-50{ background: rgba(0,0,0,.5); }
+
+//Custom Margin & Padding
+.mt-6, .my-6{ margin-top: 5rem!important; }
+.pt-6, .py-6{ padding-top: 5rem!important; }
+.pb-6, .py-6{ padding-bottom: 5rem!important; }
+
+
+.wp-block-pullquote{ 
+		
+	font-family: $stylized-font; 
+	margin: 5rem 0 0; 
+	
+	blockquote{
+		
+		margin: 0;
+		
+		cite{
+			text-align: right;
+		}
+		
+	}
+	
+}
+
+.featured{
+	
+	.featured_title{ color: white; font-size: 4rem; text-shadow: 0px 0px 15px rgba(0,0,0, .7); font-family: $body-font; }
+	
+	.featured_copy, div.featured_copy p{ font-size: 1.2rem; color: white; text-shadow: 0px 0px 15px rgba(0,0,0, .7); }
+	
+	.featured_buttons a{ margin: 0 20px; }
+	
+}
+
+header{
+
+	nav{
+		
+		ul li a{
+			color: $green; font-size: $nav-size; text-transform: uppercase;
+			
+			&:hover{
+				color: white;
+			}
+			
+			&.active{
+				background-color: $green!important;
+			}
+		}
+		
+	}
+	
+}
+
+.counter{
+	
+	.count-box{
+		
+		border-right: 1px solid $primary;
+		
+		&:last-of-type{ border-right: none; }		
+		
+		h4{ font-family: $body-font; font-size: 4rem; }
+		h5{ font-family: $body-font; font-size: 1.25rem; }
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
