@@ -11,6 +11,10 @@ sidebars, comments, etc.
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
+// LOAD CUSTOM FUNCTIONS
+require_once( 'library/class-wp-bootstrap-navwalker.php' );
+require_once( 'library/custom.php' );
+
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 

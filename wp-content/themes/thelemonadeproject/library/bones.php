@@ -128,8 +128,17 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'bootstrap-stylesheet', get_stylesheet_directory_uri() . '/library/css/bootstrap/bootstrap.min.css', array(), '4.3.1', 'all' );		
 
+		// register main stylesheet
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		
+		// register main stylesheet
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );		
+
+		// register main stylesheet
+		wp_register_style( 'tlp-stylesheet', get_stylesheet_directory_uri() . '/library/css/thelemonadeproject.css', array(), '', 'all' );		
+		
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
@@ -140,10 +149,16 @@ function bones_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'popper-js', get_stylesheet_directory_uri() . '/library/js/libs/popper.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/library/js/custom-min.js', array( 'jquery' ), '', true );
+	
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_style( 'bones-stylesheet' );
+		wp_enqueue_style( 'bootstrap-stylesheet' );		
+		//wp_enqueue_style( 'bones-stylesheet' );
+		wp_enqueue_style( 'tlp-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
@@ -155,6 +170,9 @@ function bones_scripts_and_styles() {
 		*/
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bones-js' );
+		wp_enqueue_script( 'popper-js' );
+		wp_enqueue_script( 'bootstrap-js' );
+		wp_enqueue_script( 'custom-js' );
 
 	}
 }
@@ -294,6 +312,21 @@ function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
+}
+
+
+/*********************
+CUSTOM FUNCTIONS
+*********************/
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'General Website Settings',
+		'menu_title'	=> 'Website Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 }
 
 
