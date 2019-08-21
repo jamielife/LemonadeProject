@@ -26,16 +26,16 @@ a:focus, buttona:focus{ box-shadow: none!important; }
 .btn-outline-tertiary{ border: 2px solid $tertiary; color: $tertiary; background: rgba(0,0,0,.15); &:hover, &.btn-outline-tertiary:not(:disabled):not(.disabled):active{ background: $tertiary; border-color: $tertiary; color: gray; } }
 
 //Tooltips
-.tooltip-inner { background-color: white!important; color: $primary; }
-.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before { border-left-color: white!important; }
-.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before { border-top-color: white !important; }
-.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before { border-right-color: white !important; }
-.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before { border-bottom-color: white !important; }
+.tooltip-inner { background-color: $tertiary!important; color: $primary; }
+.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before { border-left-color: $tertiary!important; }
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before { border-top-color: $tertiary !important; }
+.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before { border-right-color: $tertiary !important; }
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before { border-bottom-color: $tertiary !important; }
 
 //Globals
 body{ font-family: $body-font; color: gray; }
-h1,h2,h3,h4,h5,h6{ font-family: $stylized-font; color: $green; padding: 0; margin: 0; }
-a, .btn-link{ color: $green; &:hover{ color: $green; } }
+h1,h2,h3,h4,h5,h6{ font-family: $stylized-font; color: $primary; padding: 0; margin: 0; }
+a, .btn-link{ color: $primary; &:hover{ color: $primary; } }
 
 //colors:
 .primary{ background: $primary; border: 2px solid $primary; }
@@ -79,9 +79,9 @@ a, .btn-link{ color: $green; &:hover{ color: $green; } }
 //Featured Image
 .featured{
 	
-	.featured_title{ color: white; font-size: 4rem; text-shadow: 0px 0px 15px rgba(0,0,0, .7); font-family: $body-font; }
+	.featured_title{ color: $tertiary; font-size: 4rem; text-shadow: 0px 0px 15px rgba(0,0,0, .7); font-family: $body-font; }
 	
-	.featured_copy, div.featured_copy p{ font-size: 1.2rem; color: white; text-shadow: 0px 0px 15px rgba(0,0,0, .7); }
+	.featured_copy, div.featured_copy p{ font-size: 1.2rem; color: $tertiary; text-shadow: 0px 0px 15px rgba(0,0,0, .7); }
 	
 	.featured_buttons a{ margin: 0 20px; }
 	
@@ -94,14 +94,14 @@ header{
 	nav{
 		
 		ul li a{
-			color: $green; font-size: $nav-size; text-transform: uppercase;
+			color: $primary; font-size: $nav-size; text-transform: uppercase;
 			
 			&:hover{
-				color: white;
+				color: $tertiary;
 			}
 			
 			&.active{
-				background-color: $green!important;
+				background-color: $primary!important;
 			}
 		}
 		
@@ -168,13 +168,13 @@ form{
 			
 		}
 		
-		input, textarea{ background: rgba(white, .04); color: white;  }
+		input, textarea{ background: rgba($tertiary, .04); color: $tertiary;  }
 		
 		.form_border{ 
 			height: 0; width: 0; background: $secondary; position: absolute; bottom: -2px; transition: all .2s ease; 
 		}
 		
-		&.hasfocus label, &.hasfocus label .gfield_required{ top: -20px; font-size: 12px!important; color: rgba(white, .2)!important;  }
+		&.hasfocus label, &.hasfocus label .gfield_required{ top: -20px; font-size: 12px!important; color: rgba($tertiary, .2)!important;  }
 		&.hasfocus .form_border{ height: 3px; width: 100%; }
 		&.hascontent .form_border{ width: 0; }
 				
@@ -182,7 +182,7 @@ form{
 	
 	input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, 
 	textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus{
-		border: none; -webkit-text-fill-color: white; -webkit-box-shadow: none; transition: background-color 5000s ease-in-out 0s;
+		border: none; -webkit-text-fill-color: $tertiary; -webkit-box-shadow: none; transition: background-color 5000s ease-in-out 0s;
 	}
 	
 	.gform_wrapper & li.gf_left_half{ width: 49%!important; margin-right: 1%!important; }
