@@ -24,11 +24,9 @@ The Lemonade Project
 
 # To Do:
 - Settings (background images, fonts, buttons) for all modules
-- - Responsive tweaks/fixes/nav
-- - Label position tweaks
+- Responsive tweaks/fixes/nav
+- Label position tweaks
 - Search
-- - https://codepen.io/patrickabels/pen/ylfKn
-- - https://codepen.io/atcraigwatson/pen/NGaYgK
 - Instagram feed
 - Animation effects (hovers, etc.)
 - Mobile
