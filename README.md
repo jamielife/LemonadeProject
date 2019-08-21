@@ -30,7 +30,7 @@ The Lemonade Project
 - - https://codepen.io/patrickabels/pen/ylfKn
 - - https://codepen.io/atcraigwatson/pen/NGaYgK
 - Instagram feed
-- Animation effects (logo as SVG?)
+- Animation effects (hovers, etc.)
 - Mobile
 - Parallax Leafs
 
