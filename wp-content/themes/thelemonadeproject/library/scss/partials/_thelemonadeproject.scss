@@ -25,8 +25,12 @@ a:focus, buttona:focus{ box-shadow: none!important; }
 .btn-outline-secondary{ border: 2px solid $secondary; color: $secondary; background: rgba(0,0,0,.15); &:hover, &.btn-outline-secondary:not(:disabled):not(.disabled):active{ background: $secondary; border-color: $secondary; } }
 .btn-outline-tertiary{ border: 2px solid $tertiary; color: $tertiary; background: rgba(0,0,0,.15); &:hover, &.btn-outline-tertiary:not(:disabled):not(.disabled):active{ background: $tertiary; border-color: $tertiary; color: gray; } }
 
-//Cards
-.card{ border: none!important; }
+//Tooltips
+.tooltip-inner { background-color: white!important; color: $primary; }
+.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before { border-left-color: white!important; }
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before { border-top-color: white !important; }
+.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before { border-right-color: white !important; }
+.bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before { border-bottom-color: white !important; }
 
 //Globals
 body{ font-family: $body-font; color: gray; }
@@ -40,6 +44,9 @@ a, .btn-link{ color: $green; &:hover{ color: $green; } }
 .text-primary{ color: $primary!important; }
 .text-secondary{ color: $secondary!important; }
 .text-tertiary{ color: $tertiary!important; }
+
+//opacity
+.opacity-5{ opacity: .5; }
 
 //Overlay
 .bg-overlay-25{ background: rgba(0,0,0,.25); }
@@ -55,7 +62,7 @@ a, .btn-link{ color: $green; &:hover{ color: $green; } }
 .wp-block-pullquote{ 
 		
 	font-family: $stylized-font; 
-	margin: 5rem 0 0; 
+	margin: 0rem 0 0; 
 	
 	blockquote{
 		
@@ -69,6 +76,7 @@ a, .btn-link{ color: $green; &:hover{ color: $green; } }
 	
 }
 
+//Featured Image
 .featured{
 	
 	.featured_title{ color: white; font-size: 4rem; text-shadow: 0px 0px 15px rgba(0,0,0, .7); font-family: $body-font; }
@@ -76,6 +84,8 @@ a, .btn-link{ color: $green; &:hover{ color: $green; } }
 	.featured_copy, div.featured_copy p{ font-size: 1.2rem; color: white; text-shadow: 0px 0px 15px rgba(0,0,0, .7); }
 	
 	.featured_buttons a{ margin: 0 20px; }
+	
+	.page-template-default:not(.home) & { height: 70vh!important; }
 	
 }
 
@@ -99,6 +109,19 @@ header{
 	
 }
 
+//News/Cards
+.card{
+	
+	border: none!important;
+	
+	.category_icon{ right: 0; }
+	
+	&:hover .category_icon{ opacity: 1; }
+	
+}
+
+
+//Counter
 .counter{
 	
 	.count-box{
@@ -114,18 +137,71 @@ header{
 	
 }
 
+//Content WYSIWYG
+.alignleft{	float: left; margin-right: 1rem; margin-bottom: 1rem; }
+.alignright{ float: right; margin-left: 1rem; margin-bottom: 1rem; }
+.aligncenter { display: block; margin: 0px auto 1rem; text-align: center; }
 
 
+:focus { outline: none; }
 
+form{
+	
+	input, textarea{ border: none!important; background: transparent; }
+	
+	li{
+		position: relative; margin-top: 30px!important; padding-right: 0px!important;
+		
+		input{
+						
+			transition: all .2s ease; 
+			
+		}
+		
+		textarea{ margin-bottom: -8px; }		
+		
+		label{
+			
+			color: $secondary; position: absolute; top: 10px; left: 5px; transition: all 0.3s ease; font-weight: 400!important;
+			
+			.gfield_required{ color: $secondary!important; }
+			
+		}
+		
+		input, textarea{ background: rgba(white, .04); color: white;  }
+		
+		.form_border{ 
+			height: 0; width: 0; background: $secondary; position: absolute; bottom: -2px; transition: all .2s ease; 
+		}
+		
+		&.hasfocus label, &.hasfocus label .gfield_required{ top: -20px; font-size: 12px!important; color: rgba(white, .2)!important;  }
+		&.hasfocus .form_border{ height: 3px; width: 100%; }
+		&.hascontent .form_border{ width: 0; }
+				
+	}
+	
+	input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, 
+	textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus{
+		border: none; -webkit-text-fill-color: white; -webkit-box-shadow: none; transition: background-color 5000s ease-in-out 0s;
+	}
+	
+	.gform_wrapper & li.gf_left_half{ width: 49%!important; margin-right: 1%!important; }
+	.gform_wrapper & li.gf_right_half{ width: 49%!important; margin-left: 1%!important; }
+	
+}
 
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

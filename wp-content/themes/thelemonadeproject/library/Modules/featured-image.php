@@ -12,10 +12,10 @@
 		$image = "";
 	endif; 
 	
-	$style = 'style ="background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 45%), url(' . $image . ') 50% / cover no-repeat;" class="' . $class . '"';	
+	$style = 'style ="background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 45%), url(' . $image . ') 50% / cover no-repeat fixed;" class="featured ' . $class . '"';	
 ?>
 				<div id="featured_image" <?php echo $style; ?> >
-					<div class="featured container m-auto text-center">
+					<div class="container m-auto text-center">
 						<div class="row justify-content-md-center">
 							<div class="col-sm-10">
 								<h2 class="featured_title font"><?php echo get_field( "featured_image_title"); ?></h2>
@@ -25,6 +25,7 @@
 									<?php echo get_field( "featured_image_copy"); ?>
 								</div>
 								<div class="featured_buttons mt-5">
+									<?php if(get_field( "featured_image_buttons" !== null)): ?>
 									<?php foreach(get_field( "featured_image_buttons") as $featured_buttons):									
 										$btn_class = 'btn-';
 										if(isset($featured_buttons['button_outline'][0])) $btn_class .= $featured_buttons['button_outline'][0] . '-';
@@ -41,6 +42,7 @@
 												<?php echo $featured_buttons['button_text']; ?>
 										</a>
 									<?php endforeach; ?>
+									<?php endif; ?>
 								</div>
 							</div>
 						</div>

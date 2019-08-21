@@ -41,4 +41,51 @@ $(window).scroll(function(){
 		
 	}
 	
-})
+});
+
+$(document).ready(function(){
+
+	$( '.blocks-gallery-item figure a, .gallery-item dt a' ).swipebox();
+	$('[data-toggle="tooltip"]').tooltip();
+	
+
+	$('form input:not([type="submit"])').val("");
+
+	$("input, select, textarea").focusin(function(){
+		$(this).closest('li').addClass("hasfocus");
+	});	
+	
+	$("input, select, textarea").focusout(function(){		
+		if($(this).val() != ""){
+			$(this).closest ('li').addClass("hascontent");
+		}else{
+			$(this).closest('li').removeClass("hasfocus");			
+			$(this).removeClass("hascontent");
+		}
+	});	
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

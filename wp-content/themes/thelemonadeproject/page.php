@@ -1,9 +1,10 @@
 <?php get_header(); ?>
+
 						<main id="main" class="wrap mt-6 p-0 container-fluid" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" class="text-center" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+							<article id="post-<?php the_ID(); ?>" class="container" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 								<header class="article-header">
 
@@ -37,39 +38,43 @@
 									?>
 								</section>
 
-								<?php comments_template(); ?>
-
 							</article>
 
 							<?php endwhile; endif; ?>
 
 						</main>
 						
-						<?php 
-							$content_modules = get_field( "content_modules"); 
+						<?php
 							
-							//printf('<pre>%s</pre><br /><br />', var_export($content_modules, true));
+							$content_modules = get_field( "content_modules");
 							
-							foreach($content_modules as $module):
+							if(isset($content_modules)):
 							
-								set_query_var('module', $module);
-							
-								switch($module['acf_fc_layout']):
-									case 'news':
-										get_template_part('library/modules/cards');
-										break;
-									case 'counter':
-										get_template_part('library/modules/counters');
-										break;										
-									case 'progress_bar':
-										get_template_part('library/modules/progress-bar');
-										break;												
-								endswitch; 
+								foreach($content_modules as $module):
 								
+									set_query_var('module', $module);
+								
+									switch($module['acf_fc_layout']):
+										case 'news':
+											get_template_part('library/modules/cards');
+											break;
+										case 'counter':
+											get_template_part('library/modules/counters');
+											break;										
+										case 'progress_bar':
+											get_template_part('library/modules/progress-bar');
+											break;
+										case 'content_wysiwyg':
+											get_template_part('library/modules/content');
+											break;
+										case 'photo_gallery':
+											get_template_part('library/modules/photo-gallery');
+											break;
+									endswitch; 
+									
+								
+								endforeach;
 							
-							endforeach;
-							
-							//get_template_part('library/modules/progress-bar');
-							
+							endif;
 							
 get_footer(); ?>

@@ -307,6 +307,26 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/library/css/swipebox.min-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/library/css/swipebox.min-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/library/css/swipebox.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/library/css/swipebox.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/library/css/thelemonadeproject.css": {
 		"aP": 1,
 		"bl": 0,
@@ -354,6 +374,35 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"/library/images/icons.png": {
+		"ft": 32768,
+		"iS": 729,
+		"oA": 0,
+		"oAP": "/library/images/icons.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/library/images/icons.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/library/images/icons.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/library/images/loader.gif": {
+		"ft": 4194304,
+		"iS": 2608,
+		"oA": 0,
+		"oAP": "/library/images/loader.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"/library/images/login-logo.png": {
 		"ft": 32768,
@@ -426,6 +475,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/library/js/libs/jquery.swipebox.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/library/js/libs/jquery.swipebox.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/library/js/libs/modernizr.custom.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -467,6 +527,14 @@
 		"oAP": "/library/Modules/cards.php",
 		"oF": 0
 		},
+	"/library/Modules/content.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/library/Modules/content.php",
+		"oF": 0
+		},
 	"/library/Modules/counters.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -475,12 +543,20 @@
 		"oAP": "/library/Modules/counters.php",
 		"oF": 0
 		},
-	"/library/modules/featured-image.php": {
+	"/library/Modules/featured-image.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/library/modules/featured-image.php",
+		"oAP": "/library/Modules/featured-image.php",
+		"oF": 0
+		},
+	"/library/Modules/photo-gallery.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/library/Modules/photo-gallery.php",
 		"oF": 0
 		},
 	"/library/Modules/progress-bar.php": {

@@ -131,7 +131,7 @@ function bones_scripts_and_styles() {
 		wp_register_style( 'bootstrap-stylesheet', get_stylesheet_directory_uri() . '/library/css/bootstrap/bootstrap.min.css', array(), '4.3.1', 'all' );		
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'swipebox-stylesheet', get_stylesheet_directory_uri() . '/library/css/swipebox.min.css', array(), '', 'all' );
 		
 		// register main stylesheet
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );		
@@ -151,13 +151,14 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 		wp_register_script( 'popper-js', get_stylesheet_directory_uri() . '/library/js/libs/popper.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'swipebox-js', get_stylesheet_directory_uri() . '/library/js/libs/jquery.swipebox.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/library/js/custom-min.js', array( 'jquery' ), '', true );
-	
+		wp_register_script( 'fa-js', 'https://kit.fontawesome.com/dd79e0b712.js');
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
 		wp_enqueue_style( 'bootstrap-stylesheet' );		
-		//wp_enqueue_style( 'bones-stylesheet' );
+		wp_enqueue_style( 'swipebox-stylesheet' );
 		wp_enqueue_style( 'tlp-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 
@@ -172,7 +173,9 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-js' );
 		wp_enqueue_script( 'popper-js' );
 		wp_enqueue_script( 'bootstrap-js' );
+		wp_enqueue_script( 'swipebox-js' );
 		wp_enqueue_script( 'custom-js' );
+		wp_enqueue_script( 'fa-js' );
 
 	}
 }
@@ -329,6 +332,21 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+add_filter( 'gform_field_container', 'my_field_container', 10, 6 );
+function my_field_container( $field_container, $field, $form, $css_class, $style, $field_content ) {
+    return '<li class="'.$css_class.'">{FIELD_CONTENT}<div class="form_border"></div></li>';
+}
+
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+function form_submit_button( $button, $form ) {
+    return "<button class='btn btn-lg w-25 btn-primary gform_button' id='gform_submit_button_{$form['id']}'>Submit</button>";
+}
+
+add_filter('upload_mimes', 'cc_mime_types');
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
 
 
 ?>

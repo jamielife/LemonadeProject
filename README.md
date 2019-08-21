@@ -23,16 +23,26 @@ The Lemonade Project
 - Fonts.google.com
 
 # To Do:
-- Galleries (using WordPress defaults? Bootstrap extras: Carousel, Modal Popup, etc.)
-- Blog specific cats from IA
-- Website Settings admin page
 - Colors (background, font, button) settings for all modules
-- CTA Module
-- Multi-image module
-- Gravity forms module/footer
-- Content block module
-- Standard WP Content styling (quotes, uls, etc.)
-- Background images for select modules/Textures
-- Icon select for certain modules
-- Paralax
+
+- - Responsive tweaks
+- - Label position tweaks
+- Search
+- - https://codepen.io/patrickabels/pen/ylfKn
+- - https://codepen.io/atcraigwatson/pen/NGaYgK
+- Instagram feed
 - Animation effects (logo as SVG?)
+- Mobile
+- Parallax Leafs
+
+# Done:
+- Featured image size on inner pages
+- Website Settings admin page
+- - Favicon
+- - Logo centered/left aligned
+- Gravity forms module/footer
+- Icon select for certain modules
+- Standard WP Content styling (quotes, urls, etc.)
+- Parallax 
+
+# Options:

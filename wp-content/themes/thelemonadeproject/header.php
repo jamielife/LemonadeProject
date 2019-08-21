@@ -7,28 +7,22 @@
 
 	<head>
 		<meta charset="utf-8">
+		
+		<?php //Default to logo defined on home page
+		$icon = get_field( "icons", 'option' ); ?>	
 
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php wp_title(' | '); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#f01d4f">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-            <meta name="theme-color" content="#121212">
-
+		
+		<link rel="apple-touch-icon" href="<?php echo $icon["touch_icon"]; ?>">
+		<link rel="icon" href="<?php echo $icon["favicon"]; ?>">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
@@ -36,24 +30,38 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-
-		<!-- <div id="container" class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"> Single page full width only homepage -->
+		
+		<?php //Default to logo defined on home page
+		$logo = get_field( "logo", 'option' ); ?>
 
 			<header class="m-0 p-0">
 		      
-				<div class="container cover-container d-flex w-100 mx-auto flex-column position-relative">	
+				<div class="container<?php if($logo['full_width']) echo '-fluid'; ?> cover-container d-flex w-100 mx-auto flex-column position-relative">	
 					
-					<nav class="navbar navbar-expand-md navbar-light p-3 position-absolute w-100 clearfix" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav class="navbar navbar-expand-md navbar-light p-3 position-absolute w-100 clearfix <?php if($logo['centered']) echo 'flex-column'; ?> " 
+						 role="navigation" itemscope 
+						 itemtype="http://schema.org/SiteNavigationElement">
+							 
+						<?php //Display logo
+						if(pathinfo($logo['logo_image'], PATHINFO_EXTENSION) === 'svg') $logo_image = file_get_contents($logo['logo_image']); ?>
 						
-						<a class="navbar-brand" href="/">
-							<img src="/wp-content/themes/thelemonadeproject/library/images/login-logo.png" alt="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
-						</a>
+						<a id="logo" class="navbar-brand" rel="home" 
+							href="<?php echo esc_url( home_url( '/' ) ); ?>" 
+							style="width: <?php echo $logo['logo_width']; ?>px;"><?php echo $logo_image; ?></a>
+							
+						<?php
+							if($logo['centered']): 
+								$centered = 'm-auto';
+							else: 
+								$centered = 'ml-auto';
+							endif; 
+						?>							
 	
 						<?php wp_nav_menu( array(
 							'theme_location'  => 'main-nav',
 							'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
 							'container'       => null,
-							'menu_class'      => 'nav nav-pills ml-auto',
+							'menu_class'      => 'nav nav-pills ' . $centered,
 							'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'          => new WP_Bootstrap_Navwalker(),
 						) ); ?>

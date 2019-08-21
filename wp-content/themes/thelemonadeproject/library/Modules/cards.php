@@ -14,11 +14,14 @@
 								<div class="card-columns mt-5">
 									
 									<?php
+										
 
+										
 									// Custom query
 									$the_query = new WP_Query(
 															array(
 																'post_type' 		=> 'post',
+																'cat'				=> $module['news_category'],
 																'posts_per_page'	=> $module['number_displayed']
 															)
 												);
@@ -28,6 +31,9 @@
 									    while($the_query->have_posts()):
 										    
 										    $the_query->the_post();
+
+											$category = get_the_category();
+											$category_icon = $category[0]->term_id;
 										    
 											if (has_post_thumbnail($post->ID)): //check for featured image on page
 												$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
@@ -38,13 +44,25 @@
 											
 											$postFormat = get_post_format();
 											
-											$isQuote 	= ($postFormat == 'quote'); //Quote Post Cat
-											$isOverlay 	= ($postFormat == 'gallery'); //Image with Text Overlay Cat
-											$isImage 	= ($postFormat == 'image'); //Image Only Cat
-											
+											$isQuote 	= ($postFormat == 'quote'); //Quote Post
+											$isOverlay 	= ($postFormat == 'gallery'); //Image with Text Overlay
+											$isImage 	= ($postFormat == 'image'); //Image Only
+		
 									?>
-									      
-												<div class="card <?php if(!$isImage) echo 'mb-3';?> <?php if($isQuote) echo ' primary text-white text-center p-3 '; ?> <?php if($isOverlay) echo 'bg-dark'; ?> ">
+																		      
+												<div class="card <?php if(!$isImage) echo 'mb-3';?> <?php if($isQuote) echo ' primary text-white text-center '; ?> <?php if($isOverlay) echo 'bg-dark'; ?> ">
+													
+													<?php if(isset($category_icon)): ?>
+														<a 
+															href="<?php echo get_field('category_page', 'term_' . $category[0]->term_id); ?>" 
+															class="category_icon m-0 pr-2 pt-1 position-absolute d-block text-white text-right opacity-5" 
+															data-toggle="tooltip" 
+															data-placement="left" 
+															title="<?php echo $category[0]->name; ?>"
+														>
+															<?php echo get_field('category_icon', 'term_' . $category[0]->term_id); ?>
+														</a>
+													<?php endif; ?>
 													
 													<?php if(is_sticky()): ?>
 														<div class="card-header text-center">Featured Post</div>													
@@ -52,7 +70,7 @@
 													
 													<?php if($isQuote): ?>
 													
-														<blockquote class="blockquote mb-0">
+														<blockquote class="blockquote mb-0 p-3">
 															<p><?php echo get_the_content_feed(); ?></p>
 															<footer class="blockquote-footer text-white">
 																<small>
@@ -99,7 +117,7 @@
 									
 								</div>
 								
-								<p class="text-center mt-5"><a href="<?php echo get_the_permalink(); ?>" title="Read More" class="btn btn-secondary text-dark btn-lg w-25 ">View All Articles</a></p>															
+								<p class="text-center mt-5"><a href="<?php echo get_the_permalink(); ?>" title="Read More" class="btn btn-primary btn-lg w-25 ">View All Articles</a></p>															
 								
 							</div>
 							
