@@ -35,6 +35,11 @@ The Lemonade Project
 - Parallax Leafs
 
 # Done:
+- WordPress install
+- Initial framework, build, etc.
+- Settings, plugins, config
+- Build content modules
+- Add forms
 - Featured image size on inner pages
 - Website Settings admin page
 - - Favicon
