@@ -23,8 +23,7 @@ The Lemonade Project
 - Fonts.google.com
 
 # To Do:
-- Colors (background, font, button) settings for all modules
-
+- Settings (background images, fonts, buttons) for all modules
 - - Responsive tweaks
 - - Label position tweaks
 - Search
@@ -43,6 +42,4 @@ The Lemonade Project
 - Gravity forms module/footer
 - Icon select for certain modules
 - Standard WP Content styling (quotes, urls, etc.)
-- Parallax 
-
-# Options:
+- Parallax
