@@ -24,7 +24,7 @@ The Lemonade Project
 
 # To Do:
 - Settings (background images, fonts, buttons) for all modules
-- - Responsive tweaks
+- - Responsive tweaks/fixes/nav
 - - Label position tweaks
 - Search
 - - https://codepen.io/patrickabels/pen/ylfKn
