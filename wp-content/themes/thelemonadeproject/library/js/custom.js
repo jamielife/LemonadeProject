@@ -64,6 +64,21 @@ $(document).ready(function(){
 		}
 	});	
 	
+	
+	
+		$('#searchToggle').click(function(){
+              $('#searchform').toggleClass('open');
+              if('#searchform.open'){
+                  $('#searchform input#s').focus();
+              }
+          });
+          $('#searchform input#s').focusout(function(event){
+              if(!$('#searchToggle').is(':focus') && !$('#searchToggle').is(':active')){
+                  $('#searchform').removeClass('open');
+              }
+          });	
+	
+	
 });
 
 

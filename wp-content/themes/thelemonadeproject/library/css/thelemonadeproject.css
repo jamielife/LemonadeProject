@@ -65,6 +65,9 @@ a:focus, buttona:focus {
 .bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
   border-bottom-color: white !important; }
 
+html, body {
+  overflow-x: hidden; }
+
 body {
   font-family: "Montserrat", sans-serif;
   color: gray; }
@@ -149,7 +152,7 @@ a, .btn-link {
 
 header nav ul li a {
   color: #54c334;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   text-transform: uppercase; }
   header nav ul li a:hover {
     color: white; }
@@ -251,3 +254,72 @@ form textarea:-webkit-autofill:hover, form textarea:-webkit-autofill:focus, form
 .gform_wrapper form li.gf_right_half {
   width: 49% !important;
   margin-left: 1% !important; }
+
+#anchorSearch {
+  position: relative;
+  display: block; }
+  #anchorSearch #searchform {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: right;
+    height: 46px; }
+    #anchorSearch #searchform .form-group {
+      -webkit-transform-origin: right center;
+              transform-origin: right center;
+      position: absolute;
+      left: auto;
+      top: -1px;
+      -webkit-transform: scale(0, 1);
+              transform: scale(0, 1);
+      right: 45px;
+      border: 2px solid #54c334;
+      -webkit-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
+      #anchorSearch #searchform .form-group #s {
+        height: 46px;
+        border: 1px solid #54c334;
+        width: 250px;
+        box-shadow: none;
+        outline: none;
+        border-radius: 0;
+        color: #54c334; }
+        #anchorSearch #searchform .form-group #s::-webkit-input-placeholder {
+          color: lightgray; }
+        #anchorSearch #searchform .form-group #s::-moz-placeholder {
+          color: lightgray; }
+        #anchorSearch #searchform .form-group #s:-ms-input-placeholder {
+          color: lightgray; }
+        #anchorSearch #searchform .form-group #s::-ms-input-placeholder {
+          color: lightgray; }
+        #anchorSearch #searchform .form-group #s::placeholder {
+          color: lightgray; }
+        #anchorSearch #searchform .form-group #s:-webkit-autofill, #anchorSearch #searchform .form-group #s:-webkit-autofill:hover, #anchorSearch #searchform .form-group #s:-webkit-autofill:focus {
+          -webkit-text-fill-color: #54c334; }
+    #anchorSearch #searchform.open .form-group {
+      right: calc(100% + 50px);
+      left: auto;
+      -webkit-transform: scale(1, 1);
+              transform: scale(1, 1); }
+  #anchorSearch #searchToggle {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 1.25rem;
+    color: #54c334;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+    border: none;
+    box-shadow: none; }
+    #anchorSearch #searchToggle:focus {
+      border: none;
+      box-shadow: none; }
+    #anchorSearch #searchToggle i {
+      line-height: 46px;
+      width: 46px;
+      height: 46px;
+      color: #54c334; }
+      #anchorSearch #searchToggle i:hover, #anchorSearch #searchToggle i:active, #anchorSearch #searchToggle i:focus {
+        color: white; }

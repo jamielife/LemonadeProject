@@ -27,10 +27,14 @@ The Lemonade Project
 - Responsive tweaks/fixes/nav
 - Label position tweaks
 - Search
+- - https://codepen.io/patrickabels/pen/ylfKn
+- - https://codepen.io/atcraigwatson/pen/NGaYgK
 - Instagram feed
 - Animation effects (hovers, etc.)
 - Mobile
 - Parallax Leafs
+- Fix:
+- - Yellow progress bar
 
 # Done:
 - WordPress install

@@ -12,7 +12,7 @@ $tertiary: white;
 //Custon Vars
 $stylized-font	: 'Josefin Slab', serif;
 $body-font		: 'Montserrat', sans-serif;
-$nav-size		: 1.15rem;
+$nav-size		: 1.25rem;
 
 //Bootstrap Overrides
 a:focus, buttona:focus{ box-shadow: none!important; }
@@ -33,6 +33,7 @@ a:focus, buttona:focus{ box-shadow: none!important; }
 .bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before { border-bottom-color: $tertiary !important; }
 
 //Globals
+html, body{ overflow-x: hidden; }
 body{ font-family: $body-font; color: gray; }
 h1,h2,h3,h4,h5,h6{ font-family: $stylized-font; color: $primary; padding: 0; margin: 0; }
 a, .btn-link{ color: $primary; &:hover{ color: $primary; } }
@@ -93,18 +94,27 @@ header{
 
 	nav{
 		
-		ul li a{
-			color: $primary; font-size: $nav-size; text-transform: uppercase;
+		ul{
 			
-			&:hover{
-				color: $tertiary;
-			}
+			li{
 			
-			&.active{
-				background-color: $primary!important;
+				a{
+					color: $primary; font-size: $nav-size; text-transform: uppercase;
+				
+					&:hover{
+						color: $tertiary;
+					}
+					
+					&.active{
+						background-color: $primary!important;
+					}
+				}				
 			}
+					
 		}
-		
+	
+	//@media (max-width: 1486px) { $nav-size: 1rem; ul li a{ font-size: $nav-size; } }			
+	
 	}
 	
 }
@@ -191,24 +201,82 @@ form{
 }
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 
 
+$anchorBase: 46px;
 
+#anchorSearch{
+	
+	position: relative; display: block;
 
+  	#searchform{
+	    position: relative;
+	    margin: 0;
+	    padding: 0;
+	    display: block;
+	    float: right;
+	    height:$anchorBase;
+	    
+	    .form-group{
+			transform-origin: right center;
+			position: absolute;
+			left:auto;
+			top:-1px;
+			transform:scale(0,1);
+			right:$anchorBase - 1px;
+			border: 2px solid $primary;
+			transition: all 0.5s ease;
+	      
+			#s{
+				height:$anchorBase;
+				border: 1px solid $primary;
+				width: 250px;
+				box-shadow: none;
+				outline: none;
+				border-radius: 0;
+				color: $primary;
+				&::-webkit-input-placeholder { color: lightgray; }
+				&:-moz-placeholder { color: lightgray; }
+				&::-moz-placeholder { color: lightgray; }
+				&:-ms-input-placeholder { color: lightgray; }		
+				&::placeholder { color: lightgray; }
+				&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, { -webkit-text-fill-color: $primary; }						
+			}
+	    }
+	    
+		&.open{
+			.form-group{
+				right:calc(100% + 50px);
+				left:auto;
+				//top:0;
+				transform:scale(1,1);				
+			}
+		}
+	}
 
-
+	#searchToggle{
+	    width: $anchorBase;
+	    height:$anchorBase;
+	    line-height: $anchorBase;
+	    font-size: $nav-size;
+	    color: $primary;
+	    padding:0;
+	    background: transparent;
+	    text-align: center;
+	    border: none; box-shadow: none;
+		&:focus{ border: none; box-shadow: none; }
+		
+	    i{
+			line-height: $anchorBase;
+			width: $anchorBase;
+			height:$anchorBase;
+			color: $primary;
+			&:hover, &:active, &:focus{ color: $tertiary; }
+			
+	    }
+	}
+}
 
 
 

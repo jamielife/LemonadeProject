@@ -65,7 +65,18 @@
 							'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 							'walker'          => new WP_Bootstrap_Navwalker(),
 						) ); ?>
-							
+						
+						
+					    <div id="anchorSearch">
+					        <form role="search" class="navbar-form" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+					            <div class="form-group">
+					                <input type="text" class="form-control" placeholder="Press enter to search" value="" name="s" id="s">
+					            </div>
+					
+					        </form>
+					        <button class="btn" id="searchToggle"><i class="fas fa-search"></i></button>
+					    </div>
+												
 					</nav>
 				
 				</div>
